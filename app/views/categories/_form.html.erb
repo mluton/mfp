@@ -1,0 +1,39 @@
+<%= form_for(@category) do |f| %>
+  <fieldset>
+    <% if @category.errors.any? %>
+      <div class="alert alert-danger">
+        <%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved
+      </div>
+    <% end %>
+
+      <div class="form-group <%= @category.errors.keys.include?(:name) ? 'has-error' : '' %>">
+        <%= f.label :name, class: 'control-label' %>
+        <%= f.text_field :name, class: 'form-control input-lg' %>
+        <% if @category.errors.keys.include?(:name) %>
+          <% @category.errors.full_messages_for(:name).each do |msg| %>
+            <span class="help-block"><%= msg -%></span>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="form-group <%= @category.errors.keys.include?(:deck) ? 'has-error' : '' %>">
+        <%= f.label :deck, class: 'control-label' %>
+        <%= f.text_field :deck, class: 'form-control input-lg' %>
+      </div>
+
+      <div class="form-group <%= @category.errors.keys.include?(:description) ? 'has-error' : '' %>">
+        <%= f.label :description, class: 'control-label' %>
+        <%= f.text_area :description, rows: 10, class: 'form-control input-lg' %>
+      </div>
+
+      <div class="form-group <%= @category.errors.keys.include?(:ordinal) ? 'has-error' : '' %>">
+        <%= f.label :ordinal, class: 'control-label' %>
+        <%= f.number_field :ordinal, min: 0, class: 'form-control input-lg' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit :class => 'btn btn-lg btn-primary' %>
+      </div>
+
+  </fieldset>
+<% end %>

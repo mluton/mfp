@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="page-header">
+    <h1><%= @category.name -%> <small><%= @category.deck -%></small></h1>
+  </div>
+</div>
+
+<div class="container">
+  <% cache "articles_for_category_#{@category.id}" do %>
+    <%= render @category.articles %>
+  <% end %>
+
+  <% if admin_user? %>
+    <hr size="1"/>
+    <%= link_to 'New Article', new_article_path, :class => 'btn btn-default' %>
+  <% end %>
+</div>

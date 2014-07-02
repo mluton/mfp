@@ -1,0 +1,43 @@
+<%= form_for(@article) do |f| %>
+  <fieldset>
+    <% if @article.errors.any? %>
+      <div class="alert alert-danger">
+        <%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved
+      </div>
+    <% end %>
+
+    <div class="form-group <%= @article.errors.keys.include?(:title) ? 'has-error' : '' %>">
+      <%= f.label :title, class: 'control-label' %>
+      <%= f.text_field :title, class: 'form-control input-lg' %>
+      <% if @article.errors.keys.include?(:title) %>
+        <% @article.errors.full_messages_for(:title).each do |msg| %>
+          <span class="help-block"><%= msg -%></span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :category_id, class: 'control-label' %>
+      <%= collection_select(:article, :category_id, Category.all, :id, :name, {prompt: "Select Category"}, {class: 'form-control'}) %>
+    </div>
+
+    <div class="form-group <%= @article.errors.keys.include?(:description) ? 'has-error' : '' %>">
+      <%= f.label :description, class: 'control-label' %>
+      <%= f.text_area :description, rows: 5, class: 'form-control input-lg' %>
+    </div>
+
+    <div class="form-group <%= @article.errors.keys.include?(:body) ? 'has-error' : '' %>">
+      <%= f.label :body, class: 'control-label' %>
+      <%= f.text_area :body, rows: 20, class: 'form-control input-lg' %>
+    </div>
+
+    <div class="form-group <%= @article.errors.keys.include?(:ordinal) ? 'has-error' : '' %>">
+      <%= f.label :ordinal, class: 'control-label' %>
+      <%= f.number_field :ordinal, min: 0, class: 'form-control input-lg' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit :class => 'btn btn-lg btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>

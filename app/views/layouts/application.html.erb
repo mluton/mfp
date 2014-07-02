@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minecraftforparents</title>
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<!-- Static navbar -->
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'Minecraft for Parents', root_path, class: 'navbar-brand' %>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <% @categories.each do |category| %>
+          <% item_class = category.id == (@current_category && @current_category.id) ? 'active' : 'none' %>
+          <li class='<%= item_class -%>'><%= link_to category.name, category -%></li>
+        <% end %>
+      </ul>
+
+      <% if whitelisted_ip? %>
+        <p class="navbar-text navbar-right">
+          <% if current_user %>
+            <a href="#" class="navbar-link"><%= current_user.email -%></a>
+            <%= link_to 'Logout', logout_path, class: 'navbar-link' -%>
+          <% else %>
+            <%= link_to 'Login', login_path, class: 'navbar-link' -%>
+          <% end %>
+        </p>
+      <% end %>
+
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<% if notice %>
+  <div class="container">
+    <div class="alert alert-success">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= notice %>
+    </div>
+  </div>
+<% end %>
+
+<%= yield %>
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">&copy; <%= Date.today.year -%> Michael &amp; Emily Luton.</p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+getting_started:
+  name: Getting Started
+  deck: Everything you need to know to get started in Minecraft
+  description: Learn everything you need to know to help your child get started in the world of Minecraft. Blah blah and some other stuff here.
+  ordinal: 1
+
+digging_deeper:
+  name: Digging Deeper
+  deck: How to deal with those mods and texture packs and whatnot
+  description: After playing the vanilla game for a while your child is going to want to get into some deeper functionality. Here's what's involved.
+  ordinal: 2
+
+multiplayer:
+  name: Multiplayer
+  deck: How to play nicely with others
+  description: Playing with other people doesn't have to be something to be afraid of. There's ways to handle this properly. We'll tell you how.
+  ordinal: 3
+
+youtube:
+  name: YouTube
+  deck: Watching others play Minecraft
+  description: The only thing kids like more than playing Minecraft is watching others play Minecraft. Here's what you need to know.
+  ordinal: 4

@@ -1,0 +1,48 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+first:
+  title: Lorem Ipsum
+  category: getting_started
+  description: Lorem ipsum dolor sit amet
+  body: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique magna metus, a porttitor erat feugiat nec. Integer iaculis nunc et mi iaculis scelerisque. Vivamus laoreet erat tincidunt, iaculis ligula viverra, imperdiet nulla. Etiam ac velit a nunc sagittis dapibus. In pulvinar purus non purus semper, nec fermentum risus feugiat. Praesent id dictum mi, et imperdiet libero. Curabitur sodales enim nec orci malesuada, sed mollis lectus iaculis. Donec sem mauris, accumsan in enim eu, tincidunt mattis turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse in gravida nulla, eu rutrum arcu.
+  ordinal: 1
+
+second:
+  title: Lorem Ipsum
+  category: getting_started
+  description: Lorem ipsum dolor sit amet
+  body: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique magna metus, a porttitor erat feugiat nec. Integer iaculis nunc et mi iaculis scelerisque. Vivamus laoreet erat tincidunt, iaculis ligula viverra, imperdiet nulla. Etiam ac velit a nunc sagittis dapibus. In pulvinar purus non purus semper, nec fermentum risus feugiat. Praesent id dictum mi, et imperdiet libero. Curabitur sodales enim nec orci malesuada, sed mollis lectus iaculis. Donec sem mauris, accumsan in enim eu, tincidunt mattis turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse in gravida nulla, eu rutrum arcu.
+  ordinal: 2
+
+third:
+  title: Lorem Ipsum
+  category: getting_started
+  description: Lorem ipsum dolor sit amet
+  body: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique magna metus, a porttitor erat feugiat nec. Integer iaculis nunc et mi iaculis scelerisque. Vivamus laoreet erat tincidunt, iaculis ligula viverra, imperdiet nulla. Etiam ac velit a nunc sagittis dapibus. In pulvinar purus non purus semper, nec fermentum risus feugiat. Praesent id dictum mi, et imperdiet libero. Curabitur sodales enim nec orci malesuada, sed mollis lectus iaculis. Donec sem mauris, accumsan in enim eu, tincidunt mattis turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse in gravida nulla, eu rutrum arcu.
+  ordinal: 3
+
+what_is_minecraft:
+  title: What Is Minecraft?
+  category: getting_started
+  description: What exactly is this thing all the kids are obsessed about? We describe the basic gameplay in Minecraft and the different game modes.
+  body: |
+    Minecraft is a sandbox game where the player makes creations with blocks. A sandbox game is one in which there is no specific goal to be achieved. There is no princess to rescue. There are no levels to complete.  There is no alien invasion to be defeated. In Minecraft, the player simply builds whatever creations they feel like building. It is often referred to as a computerized version of Legos. Some people build fancy houses. Some people build elaborate underground catacombs. Some people recreate locations from popular movies and books. In addition to structures, players can also build machines. Machines can be as simple as a lever or as complex as a computer. Some people have built working clocks, light switches and adding machines just to name a few.
+
+    The game has a very low-resolution artwork which is part of its appeal. Minecraft is intentionally very pixelated. Some adults can be put off by the blocky art style but most kids don't mind at all.
+
+    ![](01.whatisminecraft.png)
+
+    The game can be played in a few different modes which can make it easier or more difficult depending on which one you choose.
+
+    ### Creative
+
+    The player has access to an infinite amount of building materials. Enemy creatures do not exist. You can fly and breathe underwater. You can fall from high places and not get hurt. This is the safest and easiest way for newcomers to play. Kids can build anything they want without fear of being attacked by monsters or dying in any way. However, it is possible to dig through the bottom of the world, fall through and die so, uh... don't do that.
+
+    ### Survival
+
+    The player must gather building materials from the world by "mining" them. At nighttime enemy monsters appear and attack you. You can drown if you spend too much time underwater and you can get hurt by falling from high places. Survival mode is for more experienced players who know how to protect themselves from the dangers present in this mode.
+
+    ### Hardcore
+
+    This is the same as Survival mode with the addition that you only have one life. When you die the world is deleted and you will not be able to play that world again. Obviously, we do not recommend this mode for kids. Only really experienced players who can handle the harsh consequences of dying should consider playing in Hardcore mode.
+  ordinal: 1

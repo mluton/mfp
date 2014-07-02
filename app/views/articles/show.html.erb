@@ -1,0 +1,28 @@
+<% cache @article do %>
+  <div class="container">
+
+    <ol class="breadcrumb">
+      <li><%= link_to 'Home', root_path -%></li>
+      <li><%= link_to @article.category.name, @article.category -%></li>
+      <li class="active"><%= @article.title -%></li>
+    </ol>
+
+    <h2><%= @article.title -%></h2>
+
+    <p><%= markdown @article.body %></p>
+
+    <ul class="pager">
+      <% if @article.previous %>
+        <li class="previous"><%= link_to "&larr; #{@article.previous.title}".html_safe, @article.previous %></li>
+      <% end %>
+
+      <% if @article.next %>
+        <li class="next"><%= link_to "#{@article.next.title} &rarr;".html_safe, @article.next -%></li>
+      <% end %>
+    </ul>
+
+    <% if admin_user? %>
+      <%= link_to 'Edit', edit_article_path(@article), :class => 'btn btn-default' %>
+    <% end %>
+  </div>
+<% end %>

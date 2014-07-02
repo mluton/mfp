@@ -1,0 +1,13 @@
+<% cache category do %>
+  <div class="col-md-6">
+    <h2><%= link_to category.name, category -%></h2>
+    <p><%= category.description -%></p>
+<% end %>
+
+  <% if admin_user? %>
+    <div class="btn-group">
+      <%= link_to 'Edit', edit_category_path(category), :class => 'btn btn-default' %>
+      <%= link_to 'Utterly Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default' %>
+    </div>
+  <% end %>
+</div>
