@@ -1,4 +1,5 @@
-require "bundler/capistrano"  # TODO: See what happens if this line is removed
+require "rvm/capistrano"
+require "bundler/capistrano"
 
 set :scm, :git
 set :application, "mfp"
