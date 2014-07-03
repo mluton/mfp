@@ -53,5 +53,8 @@ gem 'unicorn'
 gem 'capistrano', group: :development
 gem 'rvm-capistrano', group: :development
 
+# MySQL
+gem 'mysql', group: :production
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
