@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     helper_method :admin_user?
 
     def whitelisted_ip?
-      ['127.0.0.1'].include? request.remote_ip
+      ['127.0.0.1', '71.198.81.37'].include? request.remote_ip
     end
     helper_method :whitelisted_ip?
 
