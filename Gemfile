@@ -56,5 +56,8 @@ gem 'rvm-capistrano', group: :development
 # MySQL
 gem 'mysql', group: :production
 
+# Memcache
+gem 'dalli', group: :production
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
