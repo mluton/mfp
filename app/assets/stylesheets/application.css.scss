@@ -11,13 +11,10 @@
  *= require_self
  *= require_tree .
  */
-@import "bootstrap";
 
-.container {
-  p {
-    font-size: 20px;
-  }
-}
+$font-size-base: 16px;
+
+@import "bootstrap";
 
 h3 {
   border-bottom-color: rgb(238, 238, 238);
@@ -53,7 +50,6 @@ body {
   background-color: #f5f5f5;
   padding: 20px;
 }
-
 /* ------------------------------------------------------------------------- */
 /*  Sticky footer styles - end                                               */
 /* ------------------------------------------------------------------------- */
