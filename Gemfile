@@ -54,7 +54,7 @@ gem 'capistrano', group: :development
 gem 'rvm-capistrano', group: :development
 
 # MySQL
-gem 'mysql', group: :production
+gem 'mysql2', group: :production
 
 # Memcache
 gem 'dalli', group: :production
