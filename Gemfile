@@ -47,7 +47,7 @@ gem 'quiet_assets', group: :development
 gem 'seed_dump', group: :development
 
 # Use unicorn as the app server
-gem 'unicorn'
+# gem 'unicorn'
 
 # Use Capistrano for deployment
 gem 'capistrano', group: :development

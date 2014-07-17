@@ -10,9 +10,9 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 set :branch, "master"
 
-role :web, "96.126.118.247"
-role :app, "96.126.118.247"
-role :db,  "96.126.118.247", :primary => true
+role :web, "198.199.110.89"
+role :app, "198.199.110.89"
+role :db,  "198.199.110.89", :primary => true
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
@@ -20,16 +20,14 @@ ssh_options[:forward_agent] = true
 after "deploy:restart", "deploy:cleanup"
 
 namespace :deploy do
-  %w[start stop restart].each do |command|
-    desc "#{command} unicorn server"
-    task command, roles: :app, except: {no_release: true} do
-      run "/etc/init.d/unicorn_#{application} #{command}"
-    end
+  task :start do; end
+  task :stop do; end
+  task :restart, roles: :app, except: {no_release: true} do
+    run "touch #{deploy_to}/current/tmp/restart.txt"
   end
 
   task :setup_config, roles: :app do
-    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
-    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+    sudo "ln -nfs #{current_path}/config/apache.conf /etc/apache2/sites-available/#{application}"
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
