@@ -1,5 +1,6 @@
 class Article < ActiveRecord::Base
   validates :title, presence: true
+  validates :short_title, presence: true, length: {maximum: 50}
   validates :slug, uniqueness: true, presence: true
   validates :description, presence: true, length: {minimum: 10, maximum: 500} # Roughy between 3 and 75 words
   validates :body, presence: true
