@@ -6,8 +6,9 @@ class Article < ActiveRecord::Base
   validates :ordinal, numericality: {only_integer: true, greater_than_or_equal_to: 1}
 
   before_validation :generate_slug
+  after_update :clear_cache
 
-  belongs_to :category
+  belongs_to :category, touch: true
 
   def previous
     Article.where('ordinal < ? and category_id = ?', self.ordinal, self.category_id).order(:ordinal).last
@@ -23,5 +24,10 @@ class Article < ActiveRecord::Base
 
   def generate_slug
     self.slug ||= title.parameterize
+  end
+
+  def clear_cache
+    Luton::Cache.delete("article_with_id_#{self.slug}")
+    Luton::Cache.delete("category_for_article_id_#{self.slug}")
   end
 end
