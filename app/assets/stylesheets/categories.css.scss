@@ -1,3 +1,11 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  p {
+    font-size: 18px;
+  }
+}
