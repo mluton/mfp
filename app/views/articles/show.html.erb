@@ -1,6 +1,5 @@
-<% cache @article do %>
-  <div class="container">
-
+<div class="container">
+  <% cache @article do %>
     <ol class="breadcrumb">
       <li><%= link_to 'Home', root_path -%></li>
       <li><%= link_to @article.category.name, @article.category -%></li>
@@ -20,9 +19,9 @@
         <li class="next"><%= link_to "#{@article.next.title} &rarr;".html_safe, @article.next -%></li>
       <% end %>
     </ul>
+  <% end %>
 
-    <% if admin_user? %>
-      <%= link_to 'Edit', edit_article_path(@article), :class => 'btn btn-default' %>
-    <% end %>
-  </div>
-<% end %>
+  <% if admin_user? %>
+    <%= link_to 'Edit', edit_article_path(@article), :class => 'btn btn-default' %>
+  <% end %>
+</div>
