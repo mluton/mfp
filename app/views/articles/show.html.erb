@@ -3,7 +3,7 @@
     <ol class="breadcrumb">
       <li><%= link_to 'Home', root_path -%></li>
       <li><%= link_to @article.category.name, @article.category -%></li>
-      <li class="active"><%= @article.short_title -%></li>
+      <li class="active"><%= @article.title -%></li>
     </ol>
 
     <h2><%= @article.title -%></h2>
@@ -12,11 +12,11 @@
 
     <ul class="pager">
       <% if @article.previous %>
-        <li class="previous"><%= link_to "&larr; #{@article.previous.short_title}".html_safe, @article.previous %></li>
+        <li class="previous"><%= link_to "&larr; #{@article.previous.title}".html_safe, @article.previous %></li>
       <% end %>
 
       <% if @article.next %>
-        <li class="next"><%= link_to "#{@article.next.short_title} &rarr;".html_safe, @article.next -%></li>
+        <li class="next"><%= link_to "#{@article.next.title} &rarr;".html_safe, @article.next -%></li>
       <% end %>
     </ul>
   <% end %>
