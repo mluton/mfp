@@ -4,6 +4,7 @@ class Category < ActiveRecord::Base
   validates :ordinal, numericality: {only_integer: true, greater_than_or_equal_to: 1}
 
   before_validation :generate_slug
+  after_update :clear_cache
 
   has_many :articles
 
@@ -15,5 +16,9 @@ class Category < ActiveRecord::Base
 
   def generate_slug
     self.slug ||= name.parameterize
+  end
+
+  def clear_cache
+    Luton::Cache.delete("ordered_categories")
   end
 end
