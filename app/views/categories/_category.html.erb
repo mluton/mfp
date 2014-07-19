@@ -1,6 +1,6 @@
 <% cache [category, admin_user?] do %>
   <div class="col-md-6">
-    <h2><%= link_to category.name, category -%></h2>
+    <h3><%= link_to category.name, category -%></h3>
     <p><%= category.description -%></p>
 
     <% if admin_user? %>
