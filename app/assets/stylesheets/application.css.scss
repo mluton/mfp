@@ -16,6 +16,11 @@ $font-size-base: 16px;
 
 @import "bootstrap";
 
+.navbar-default .navbar-brand {
+  color: #333;
+  font-size: 36px;
+}
+
 h3 {
   border-bottom-color: rgb(238, 238, 238);
   border-bottom-style: solid;
