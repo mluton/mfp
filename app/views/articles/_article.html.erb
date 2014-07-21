@@ -3,7 +3,7 @@
     <h3><%= link_to article.title, article -%></a></h3>
     <p><%= article.description -%></p>
     <% if admin_user? %>
-      <%= link_to 'Obliterate Article', article, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default' %>
+      <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default' %>
     <% end %>
   </div>
 </div>
