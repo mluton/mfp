@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_ordered_categories
+  before_action :set_default_title
 
   private
 
@@ -11,6 +12,10 @@ class ApplicationController < ActionController::Base
       @categories = Luton::Cache.fetch('ordered_categories') do
         Category.ordered
       end
+    end
+
+    def set_default_title
+      @title = "Minecraft for Parents"
     end
 
     def current_user
